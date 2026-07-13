@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Для тебя ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div
+        class="background-hearts"
+        id="backgroundHearts"
+    ></div>
+
+
+    <!-- Главный экран -->
+
+    <section
+        class="screen hero-screen"
+        id="heroScreen"
+    >
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                Для самой особенной девушки
+            </p>
+
+            <div class="photo-frame">
+
+                <span class="frame-decoration top-left">
+                    ♥
+                </span>
+
+                <span class="frame-decoration bottom-right">
+                    ♥
+                </span>
+
+                <img
+                    src="images/photo.jpg"
+                    alt="Наша фотография"
+                    class="main-photo"
+                >
+
+            </div>
+
+            <h1>Я тебя люблю</h1>
+
+            <p class="hero-description">
+                И хочу рассказать тебе, почему ты так много
+                для меня значишь
+            </p>
+
+            <button
+                class="main-button"
+                id="showReasonsButton"
+            >
+                Узнать почему ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Причины любви -->
+
+    <section
+        class="screen reasons-screen hidden"
+        id="reasonsScreen"
+    >
+
+        <div class="section-container">
+
+            <button
+                class="back-button"
+                id="backToHeroButton"
+            >
+                ← Назад
+            </button>
+
+            <p class="small-title">
+                Нажимай на каждое сердечко
+            </p>
+
+            <h2>Я люблю тебя за...</h2>
+
+            <p class="section-description">
+                Здесь только небольшая часть причин,
+                почему ты для меня особенная
+            </p>
+
+            <div
+                class="hearts-grid"
+                id="heartsGrid"
+            ></div>
+
+            <p
+                class="progress-text"
+                id="progressText"
+            >
+                Открыто: 0 из 50
+            </p>
+
+            <button
+                class="main-button hidden"
+                id="goToGameButton"
+            >
+                Но это ещё не всё ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Правила игры -->
+
+    <section
+        class="screen game-intro-screen hidden"
+        id="gameIntroScreen"
+    >
+
+        <div class="game-intro-container">
+
+            <button
+                class="back-button"
+                id="backToReasonsButton"
+            >
+                ← Назад к сердечкам
+            </button>
+
+            <div class="game-intro-card">
+
+                <div class="intro-heart">
+                    💗
+                </div>
+
+                <h2>Поймай мою любовь</h2>
+
+                <p class="game-intro-text">
+                    Лови сердечки, собирай комбо,
+                    избегай бомб и постарайся набрать
+                    как можно больше очков.
+                </p>
+
+                <div class="rules-grid">
+
+                    <div class="rule-card">
+                        <span class="rule-icon">❤️</span>
+                        <strong>Обычное</strong>
+                        <span>+1 очко</span>
+                    </div>
+
+                    <div class="rule-card">
+                        <span class="rule-icon">💖</span>
+                        <strong>Редкое</strong>
+                        <span>+3 очка</span>
+                    </div>
+
+                    <div class="rule-card">
+                        <span class="rule-icon">💛</span>
+                        <strong>Золотое</strong>
+                        <span>+5 очков</span>
+                    </div>
+
+                    <div class="rule-card danger-rule">
+                        <span class="rule-icon">💣</span>
+                        <strong>Бомба</strong>
+                        <span>−1 жизнь</span>
+                    </div>
+
+                    <div class="rule-card bonus-rule">
+                        <span class="rule-icon">⏰</span>
+                        <strong>Часы</strong>
+                        <span>+3 секунды</span>
+                    </div>
+
+                </div>
+
+                <p class="game-tip">
+                    За несколько пойманных сердечек подряд
+                    увеличивается комбо. Каждые 10 секунд
+                    игра становится быстрее.
+                </p>
+
+                <button
+                    class="main-button"
+                    id="openGameButton"
+                >
+                    Перейти к игре
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Экран игры -->
+
+    <section
+        class="screen game-screen hidden"
+        id="gameScreen"
+    >
+
+        <div class="game-wrapper">
+
+            <button
+                class="back-button"
+                id="backToGameIntroButton"
+            >
+                ← Назад
+            </button>
+
+            <div class="game-panel">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Время
+                    </span>
+
+                    <span
+                        class="stat-value"
+                        id="timer"
+                    >
+                        30
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Счёт
+                    </span>
+
+                    <span
+                        class="stat-value"
+                        id="score"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Комбо
+                    </span>
+
+                    <span
+                        class="stat-value"
+                        id="combo"
+                    >
+                        x1
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Жизни
+                    </span>
+
+                    <span
+                        class="lives"
+                        id="lives"
+                    >
+                        ❤️❤️❤️
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="difficulty-panel">
+
+                <span>
+                    Уровень:
+                    <strong id="levelText">
+                        Нежный
+                    </strong>
+                </span>
+
+                <div class="difficulty-bar">
+
+                    <div
+                        class="difficulty-fill"
+                        id="difficultyFill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="game-area"
+                id="gameArea"
+            >
+
+                <div class="cloud cloud-one">
+                    ☁
+                </div>
+
+                <div class="cloud cloud-two">
+                    ☁
+                </div>
+
+                <div
+                    class="game-message"
+                    id="gameMessage"
+                >
+
+                    <span class="message-heart">
+                        💗
+                    </span>
+
+                    <strong>
+                        Готова ловить любовь?
+                    </strong>
+
+                    <span>
+                        Нажми «Начать игру»
+                    </span>
+
+                </div>
+
+
+                <!-- Девушка-блондинка -->
+
+                <div
+                    class="player"
+                    id="player"
+                >
+
+                    <div class="girl-character">
+
+                        <div class="girl-hair-back"></div>
+
+                        <div class="girl-head">
+
+                            <div class="girl-hair-front"></div>
+
+                            <div class="girl-eyes">
+                                <span class="girl-eye"></span>
+                                <span class="girl-eye"></span>
+                            </div>
+
+                            <div class="girl-smile"></div>
+
+                        </div>
+
+                        <div class="girl-body"></div>
+
+                        <div class="girl-basket">
+                            <div class="basket-handle"></div>
+                            <div class="basket-body"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mobile-controls">
+
+                <button
+                    class="control-button"
+                    id="moveLeftButton"
+                    aria-label="Двигаться влево"
+                >
+                    ←
+                </button>
+
+                <span>
+                    Управление
+                </span>
+
+                <button
+                    class="control-button"
+                    id="moveRightButton"
+                    aria-label="Двигаться вправо"
+                >
+                    →
+                </button>
+
+            </div>
+
+            <p class="control-hint">
+                На компьютере двигай мышкой или стрелками.
+                На телефоне веди пальцем по игровому полю
+                либо используй кнопки.
+            </p>
+
+            <button
+                class="main-button"
+                id="startGameButton"
+            >
+                Начать игру
+            </button>
+
+            <div
+                class="result-card hidden"
+                id="resultCard"
+            >
+
+                <div class="result-stars">
+                    ✨ 💗 ✨
+                </div>
+
+                <h2 id="resultTitle">
+                    Ты поймала сердечки!
+                </h2>
+
+                <div class="result-score-box">
+
+                    <span>
+                        Твой результат
+                    </span>
+
+                    <strong id="finalScore">
+                        0
+                    </strong>
+
+                </div>
+
+                <p id="resultText"></p>
+
+                <p class="final-message">
+                    Но на самом деле мою любовь к тебе
+                    невозможно измерить. Она намного больше
+                    любого числа ❤️
+                </p>
+
+                <button
+                    class="main-button"
+                    id="playAgainButton"
+                >
+                    Сыграть ещё раз
+                </button>
+
+                <button
+                    class="secondary-button"
+                    id="returnToReasonsAfterGameButton"
+                >
+                    Вернуться к причинам
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
